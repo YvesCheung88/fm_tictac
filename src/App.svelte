@@ -1,29 +1,26 @@
 <script lang="ts">
   import Game from "./lib/Game.svelte";
   import Menu from "./lib/Menu.svelte";
+  import { currentPage } from "./lib/store";
 
-  let currentPage = "menu";
-  function startSolo() {
-    currentPage = "gameSolo";
-  }
-  function startDuo() {
-    currentPage = "gameDuo";
-  }
   function stop() {
-    currentPage = "menu";
+    $currentPage = "menu";
   }
 </script>
 
-{#if currentPage === "menu"}
+{#if $currentPage === "menu"}
   <Menu />
-  <button on:click={startSolo}> Start-solo </button>
-  <button on:click={startDuo}> Start-duo</button>
 {/if}
-{#if currentPage === "gameSolo"}
-  <Game mode="solo" />
+{#if $currentPage === "gameSolo" || $currentPage === "gameDuo"}
+  <Game mode={$currentPage === "gameSolo" ? "solo" : "duo"} />
   <button on:click={stop}> Stop </button>
 {/if}
-{#if currentPage === "gameDuo"}
-  <Game mode="duo" />
-  <button on:click={stop}> Stop </button>
-{/if}
+
+<style>
+  :global(body) {
+    background-color: #1a2a33;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
