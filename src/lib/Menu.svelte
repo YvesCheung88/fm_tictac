@@ -2,7 +2,7 @@
   import logo from "../assets/images/logo.svg";
   import cross from "../assets/images/icon-x.svg";
   import circle from "../assets/images/Group 4.svg";
-  import { currentPage } from "./store.js";
+  import { currentPage } from "./stores";
 
   function startSolo() {
     $currentPage = "gameSolo";
@@ -50,7 +50,7 @@
     margin: 40px 0;
     flex-shrink: 0;
     border-radius: 15px;
-    background: var(--semi-dark-navy, #1f3641);
+    background-color: #1f3641;
     box-shadow: 0px -8px 0px 0px #10212a inset;
     display: flex;
     justify-content: center;
@@ -58,7 +58,7 @@
     align-items: center;
   }
   h1 {
-    color: var(--silver, #a8bfc9);
+    color: #a8bfc9;
     text-align: center;
     font-size: 16px;
     font-weight: 700;
@@ -70,14 +70,10 @@
     height: 72px;
     flex-shrink: 0;
     border-radius: 10px;
-    background: var(--dark-navy, #1a2a33);
-  }
-  .pick-type img {
-    max-width: 50%;
-    max-height: 100%;
+    background-color: #1a2a33;
   }
   h2 {
-    color: var(--silver, #a8bfc9);
+    color: #a8bfc9;
     text-align: center;
     margin-top: 35px;
     font-size: 14px;
@@ -90,19 +86,31 @@
     height: 67px;
     flex-shrink: 0;
     border-radius: 15px;
-    background: var(--light-yellow, #f2b137);
+    background-color: #f2b137;
     box-shadow: 0px -8px 0px 0px #cc8b13 inset;
-    color: var(--dark-navy, #1a2a33);
+    color: #1a2a33;
     text-align: center;
     font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
   }
   button:last-child {
-    background: var(--light-blue, #31c3bd);
+    background-color: #31c3bd;
     box-shadow: 0px -8px 0px 0px #118c87 inset;
   }
+  .img-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .cross-image {
-    height: 54px;
+    margin: auto;
+    width: 32px;
+    height: 32px;
+  }
+  .circle-image {
+    margin-right: 5px;
   }
 </style>
