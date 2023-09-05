@@ -1,7 +1,7 @@
 <script lang="ts">
   import Game from "./lib/Game.svelte";
   import Menu from "./lib/Menu.svelte";
-  import { currentPage } from "./lib/store";
+  import { currentPage } from "./lib/stores";
 
   function stop() {
     $currentPage = "menu";
