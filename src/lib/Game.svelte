@@ -1,5 +1,5 @@
 <script lang="ts">
-  import logo from "$assets/images/logo.svg";
+  import combined from "$assets/images/combined-xo.svg";
   import cross from "$assets/images/icon-x.svg";
   import circle from "$assets/images/icon-o.svg";
 
@@ -8,8 +8,8 @@
   let buttons = new Array(9).fill(null);
   let result = null as string | null;
   let turn = "X";
-  let playerXScore = 0; // Score du joueur X
-  let playerOScore = 0; // Score de l'ordinateur O
+  let playerXScore = 0;
+  let playerOScore = 0;
   let playerDScore = 0;
 
   const winCombinations = [
@@ -44,9 +44,9 @@
         ) {
           result = "Winner " + buttons[winCombinations[i][0]];
           if (buttons[winCombinations[i][0]] === "X") {
-            playerXScore++; // Incrémenter le score du joueur X
+            playerXScore++;
           } else {
-            playerOScore++; // Incrémenter le score de l'ordinateur O
+            playerOScore++;
           }
 
           break;
@@ -62,7 +62,7 @@
   }
 </script>
 
-<img src={logo} alt="logo" />
+<img src={combined} alt="combined-xo" />
 <p>mode: {mode}</p>
 {#if !result}
   <div class="tictac">
@@ -111,36 +111,30 @@
 
 <style>
   .tictac {
-    width: 420px; /* Largeur pour accueillir trois boutons de 140px chacun */
+    width: 420px;
     display: grid;
-    grid-template-columns: repeat(
-      3,
-      140px
-    ); /* Trois colonnes de 140px chacune */
-    gap: 10px; /* Espace entre les boutons */
-    justify-content: center; /* Centrer la grille horizontalement */
-    align-content: center; /* Centrer la grille verticalement */
+    grid-template-columns: repeat(3, 140px);
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
   }
-
   .tictac button {
     width: 140px;
     height: 140px;
     flex-shrink: 0;
     border-radius: 15px;
-    background: var(--Semi-Dark-Navy, #1f3641);
+    background-color: #1f3641;
     box-shadow: 0px -8px 0px 0px #10212a inset;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  /* Styles pour les rectangles */
   .rectangles {
     display: flex;
-    justify-content: space-between; /* Les rectangles sont espacés uniformément */
-    margin-top: 20px; /* Espace entre les boutons et les rectangles */
+    justify-content: space-between;
+    margin-top: 20px;
   }
-
   .rectangle {
     width: 140px;
     height: 72px;
@@ -151,19 +145,15 @@
     justify-content: center;
     align-items: center;
   }
-
-  /* Styles individuels pour chaque rectangle */
   .rectangle:nth-child(1) {
-    background: var(--Light-Blue, #31c3bd);
+    background-color: #31c3bd;
     margin-left: -10px;
   }
-
   .rectangle:nth-child(2) {
-    background: var(--Silver, #a8bfc9);
+    background-color: #a8bfc9;
   }
-
   .rectangle:nth-child(3) {
-    background: var(--Light-Yellow, #f2b137);
+    background-color: #f2b137;
     margin-right: -10px;
   }
   /* faire un Test U, réassocier les boutons, afficher le résultat */

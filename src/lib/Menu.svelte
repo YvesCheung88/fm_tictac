@@ -1,7 +1,7 @@
 <script>
-  import logo from "../assets/images/logo.svg";
-  import cross from "../assets/images/icon-x.svg";
-  import circle from "../assets/images/Group 4.svg";
+  import logo from "../assets/images/combined-xo.svg";
+  import cross from "../assets/images/pick-x.svg";
+  import circle from "../assets/images/pick-o.svg";
   import { currentPage } from "./stores";
 
   function startSolo() {
@@ -93,6 +93,7 @@
     font-size: 20px;
     font-weight: 700;
     text-transform: uppercase;
+    margin-bottom: 20px;
   }
   button:last-child {
     background-color: #31c3bd;
