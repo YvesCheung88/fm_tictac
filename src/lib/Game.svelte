@@ -91,20 +91,21 @@
   <div class="rectangle">
     <div class="player-info">
       <span class="player-text">X (YOU)</span>
-      <div class="score">Score: {playerXScore}</div>
+      <div class="score">{playerXScore}</div>
     </div>
   </div>
 
   <div class="rectangle">
-    <span class="player-text">TIES</span>
-    <div class="score">{playerXScore}</div>
-    <div class="score">Score: {playerDScore}</div>
+    <div class="player-info">
+      <span class="player-text">TIES</span>
+      <div class="score">{playerDScore}</div>
+    </div>
   </div>
 
   <div class="rectangle">
     <div class="player-info">
       <span class="player-text">O (CPU)</span>
-      <div class="score">Score: {playerOScore}</div>
+      <div class="score">{playerOScore}</div>
     </div>
   </div>
 </div>
@@ -134,6 +135,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    color: #1a2a33;
   }
   .rectangle {
     width: 140px;
@@ -155,6 +157,14 @@
   .rectangle:nth-child(3) {
     background-color: #f2b137;
     margin-right: -10px;
+  }
+  span {
+    font-weight: 500;
+  }
+  .score {
+    font-weight: 700;
+    font-size: 24px;
+    text-align: center;
   }
   /* faire un Test U, réassocier les boutons, afficher le résultat */
 </style>
